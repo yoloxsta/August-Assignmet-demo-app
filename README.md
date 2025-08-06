@@ -57,4 +57,12 @@ Fronted
 
 NEXT_PUBLIC_API_URL=http://localhost:3001
 
+---
+cd backend
+npm run start:dev
+
+cd frontend
+npm install   # if not already done
+npm run dev
+
 ```
