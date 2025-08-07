@@ -1,8 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
 
+type User = {
+  name: string;
+};
+
 export default function Home() {
-  const [users, setUsers] = useState<any[]>([]);
+  const [users, setUsers] = useState<User[]>([]);
   const [name, setName] = useState("");
 
   const fetchUsers = async () => {
