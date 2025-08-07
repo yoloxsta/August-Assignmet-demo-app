@@ -65,4 +65,35 @@ cd frontend
 npm install   # if not already done
 npm run dev
 
+---
+
+If use aws rds
+
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ./backend
+    environment:
+      DB_HOST: mydb.cluster-xxxx.us-east-1.rds.amazonaws.com
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASS: yourpass
+      DB_NAME: testdb
+      PORT: 3001
+    ports:
+      - "3001:3001"
+
+  frontend:
+    build:
+      context: ./frontend
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:3001
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+
 ```
