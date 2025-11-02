@@ -95,5 +95,4 @@ services:
     depends_on:
       - backend
 
-
 ```
