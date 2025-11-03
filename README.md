@@ -94,5 +94,4 @@ services:
       - "3000:3000"
     depends_on:
       - backend
-
 ```
